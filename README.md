@@ -24,6 +24,24 @@ Sistema completo para gestão de locadora de veículos desenvolvido em Java segu
 5. **Relatórios** → Geração de históricos e estatísticas
 
 ## 📁 Estrutura do Projeto
+sistema-aluguel-veiculos/
+├── src/
+│   ├── entities/
+│   │   ├── Aluguel.java
+│   │   ├── Cliente.java
+│   │   ├── Veiculo.java
+│   │   ├── ItemAluguel.java
+│   │   ├── StatusAluguel.java
+│   │   └── TipoVeiculo.java
+│   ├── services/
+│   │   ├── AluguelService.java
+│   │   └── VeiculoService.java
+│   ├── repositories/
+│   │   ├── AluguelRepository.java
+│   │   └── VeiculoRepository.java
+│   └── Main.java
+├── README.md
+└── LICENSE
 
 ## 🔧 Classes e Códigos
 
