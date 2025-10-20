@@ -48,9 +48,8 @@ Cada entidade foi desenvolvida com foco em **responsabilidade única** e **encap
 Define os **possíveis estados** de um aluguel no sistema.
 
 ```java
-/**
  * Define os possíveis status de um aluguel
- */
+
 public enum StatusAluguel {
     ATIVO,         // Aluguel em andamento
     FINALIZADO,    // Devolução concluída
