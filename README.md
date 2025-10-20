@@ -57,5 +57,14 @@ public enum StatusAluguel {
     PENDENTE       // Aguardando confirmação
 }
 
-
+### 🚘 **2. Enum `TipoVeiculo`**
+/**
+ * Define os tipos de veículos disponíveis no sistema
+ */
+public enum TipoVeiculo {
+    CARRO,     // Veículo de passeio
+    MOTO,      // Motocicleta
+    CAMINHAO,  // Veículo de carga
+    SUV,       // Sport Utility Vehicle
+    SEDAN      // Carro de porte méd
 
