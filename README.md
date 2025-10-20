@@ -57,9 +57,6 @@ public enum StatusAluguel {
     CANCELADO,     // Aluguel cancelado
     PENDENTE       // Aguardando confirmação
 }
----
 
-### 🧩 **1. Enum `StatusAluguel`**
-Define os **possíveis estados** de um aluguel no sistema.
 
-```java
+
