@@ -47,7 +47,6 @@ sistema-aluguel-veiculos/
 
 ## 🏗️ Entities
 ### 1. **Enum StatusAluguel** (`StatusAluguel.java`)
-
 /**
  * Define os possíveis status de um aluguel
  */
