@@ -27,6 +27,7 @@ Sistema completo para gestão de locadora de veículos desenvolvido em Java segu
 
 ## 🔧 Classes e Códigos
 
+## 🏗️ Entities
 ### 1. **Enum StatusAluguel** (`StatusAluguel.java`)
 
 ```java
