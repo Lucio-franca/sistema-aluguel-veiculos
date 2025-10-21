@@ -56,9 +56,10 @@ public enum StatusAluguel {
 ```
 
 ### 🚘 2. Enum `TipoVeiculo`
+```java
 /**
  * Define os tipos de veículos disponíveis no sistema
- */ ```java
+ */ 
 public enum TipoVeiculo {
     CARRO,     // Veículo de passeio
     MOTO,      // Motocicleta
