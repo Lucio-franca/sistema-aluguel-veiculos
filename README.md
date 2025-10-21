@@ -21,6 +21,42 @@ Este sistema foi desenvolvido em **Java**, seguindo os princípios de **Orienta�
 Ele controla todo o ciclo de locação de veículos — desde o **cadastro**, **aluguel**, **cálculo do valor** e **devolução**, até a **geração de relatórios** com histórico e estatísticas.
 
 ---
+## ✅ Funcionalidades
+
+O sistema de aluguel de veículos oferece todas as operações essenciais para gestão de locação:
+
+- **Cadastro de Clientes**  
+  - Adicionar novos clientes.  
+  - Listar todos os clientes cadastrados.  
+  - Buscar clientes pelo CPF.
+
+- **Cadastro e Gestão de Veículos**  
+  - Cadastro inicial de veículos disponíveis para aluguel.  
+  - Consulta de veículos disponíveis e indisponíveis.  
+  - Listagem completa de veículos cadastrados.  
+  - Histórico de alugueis por veículo.
+
+- **Criação de Aluguéis**  
+  - Seleção de veículos disponíveis para aluguel.  
+  - Definição do número de dias de locação.  
+  - Cálculo automático do valor total com descontos progressivos.  
+  - Atualização da disponibilidade dos veículos.
+
+- **Finalização de Aluguéis**  
+  - Atualiza status do aluguel (FINALIZADO).  
+  - Calcula multas em caso de atraso na devolução.  
+  - Atualiza histórico do cliente e do veículo.
+
+- **Relatórios e Estatísticas**  
+  - Faturamento total (aluguéis + multas).  
+  - Veículos mais alugados.  
+  - Faturamento por categoria de veículo.  
+  - Clientes mais fiéis (com maior número de aluguéis).
+
+- **Menu Interativo em Console**  
+  - Navegação simples e intuitiva para todas as funcionalidades do sistema.  
+  - Permite ao usuário realizar operações de forma prática e direta.
+
 
 ## ⚙️ Funcionamento do Sistema
 
