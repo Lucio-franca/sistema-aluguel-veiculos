@@ -44,27 +44,26 @@ Cada entidade foi desenvolvida com foco em **responsabilidade única** e **encap
 
 ---
 
-### 🧩 **1. Enum `StatusAluguel`**
-Define os **possíveis estados** de um aluguel no sistema.
-
+### 🧩 1. Enum `StatusAluguel`
 ```java
- * Define os possíveis status de um aluguel
-
+// Define os possíveis status de um aluguel
 public enum StatusAluguel {
-    ATIVO,         // Aluguel em andamento
-    FINALIZADO,    // Devolução concluída
-    CANCELADO,     // Aluguel cancelado
-    PENDENTE       // Aguardando confirmação
+    ATIVO,       // Aluguel em andamento
+    FINALIZADO,  // Devolução concluída
+    CANCELADO,   // Aluguel cancelado
+    PENDENTE     // Aguardando confirmação
 }
+```
 
-### 🚘 **2. Enum `TipoVeiculo`**
+### 🚘 2. Enum `TipoVeiculo`
 /**
  * Define os tipos de veículos disponíveis no sistema
- */
+ */ ```java
 public enum TipoVeiculo {
     CARRO,     // Veículo de passeio
     MOTO,      // Motocicleta
     CAMINHAO,  // Veículo de carga
     SUV,       // Sport Utility Vehicle
-    SEDAN      // Carro de porte méd
-
+    SEDAN      // Carro de porte médio
+}
+ ```
