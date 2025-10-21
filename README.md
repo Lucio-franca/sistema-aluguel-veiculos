@@ -36,6 +36,57 @@ Ele controla todo o ciclo de locação de veículos — desde o **cadastro**, **
 ## 📁 Estrutura do Projeto
 
 ---
+## 📝 Classes e Códigos
+
+O sistema é estruturado em **quatro camadas principais**: Entities, Repositories, Services e Main.
+
+---
+
+### 1️⃣ Entities
+Representam os **modelos de dados** do sistema, com encapsulamento e responsabilidade única.
+
+- **Veiculo**: Contém informações do veículo, disponibilidade e histórico de aluguéis.
+- **Cliente**: Armazena dados do cliente e total de aluguéis realizados.
+- **Aluguel**: Representa um aluguel, incluindo veículos, cliente, dias, status e multas.
+- **ItemAluguel**: Representa cada veículo dentro de um aluguel.
+- **Enums**:
+  - `StatusAluguel` → ATIVO, FINALIZADO, CANCELADO, PENDENTE.
+  - `TipoVeiculo` → CARRO, MOTO, CAMINHAO, SUV, SEDAN.
+
+---
+
+### 2️⃣ Repositories
+Simulam o **banco de dados em memória**, armazenando e gerenciando entidades.
+
+- **VeiculoRepository** → Salva, lista e busca veículos; filtra veículos disponíveis.
+- **ClienteRepository** → Salva, lista e busca clientes por CPF.
+- **AluguelRepository** → Salva, lista e busca aluguéis por ID.
+
+---
+
+### 3️⃣ Services
+Implementam a **lógica de negócio**, coordenando entidades e repositórios.
+
+- **VeiculoService** → Gerencia cadastro, listagem e disponibilidade de veículos.
+- **ClienteService** → Gerencia cadastro, busca e listagem de clientes.
+- **AluguelService** → Cria, finaliza e lista aluguéis; calcula valores e multas.
+- **RelatorioService** → Gera relatórios de faturamento, veículos mais alugados, clientes fiéis e faturamento por categoria.
+
+---
+
+### 4️⃣ Main
+Classe principal que **executa o sistema**, com **menu interativo**:
+
+- Listar veículos disponíveis  
+- Cadastrar clientes  
+- Criar e finalizar aluguéis  
+- Listar aluguéis ativos  
+- Gerar relatórios  
+- Listar todos os veículos  
+- Sair do sistema
+
+O **menu interativo** permite ao usuário operar todas as funcionalidades do sistema diretamente pelo console.
+
 
 ## 🏗️ Entities
 
@@ -1021,4 +1072,27 @@ public class Main {
         }
     }
 }
+```
+## 💻 Como Executar
+
+1. **Pré-requisitos**:
+   - Java JDK 11 ou superior instalado.
+   - IDE como IntelliJ, Eclipse ou VSCode (opcional, mas recomendado).
+
+2. **Passos para execução**:
+   1. Clone ou baixe o projeto.
+   2. Abra o projeto em sua IDE ou compile via terminal:
+      ```bash
+      javac -d bin $(find . -name "*.java")
+      ```
+   3. Execute a classe principal `Main`:
+      ```bash
+      java -cp bin Main
+      ```
+   4. Siga as instruções do menu interativo no console.
+
+3. **Observações**:
+   - Todos os dados ficam em memória enquanto o programa está em execução.
+   - Ao fechar o programa, os cadastros e aluguéis serão perdidos (não há persistência em banco de dados).
+   - Para reiniciar o sistema com dados limpos, basta executar novamente a classe `Main`.
 
