@@ -254,3 +254,171 @@ public class Aluguel {
 }
 
 ```
+## 💾 Repositories
+
+A pasta `repositories` contém todas as **classes responsáveis por armazenar, buscar e gerenciar os dados em memória**.  
+Cada repositório simula o funcionamento de um **banco de dados interno**, mantendo as informações das entidades enquanto o sistema está em execução.  
+Cada classe de repositório foi desenvolvida com foco em **responsabilidade única** e **isolamento da lógica de dados**, seguindo os pilares da **Programação Orientada a Objetos (POO)**.
+
+---
+
+### 📦 1. `AluguelRepository`
+```java
+package repositories;
+
+import entities.Aluguel;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Repositório responsável por gerenciar os registros de aluguéis.
+ * Armazena dados em memória e fornece métodos para salvar, listar e buscar por ID.
+ */
+public class AluguelRepository {
+
+    private List<Aluguel> alugueis = new ArrayList<>();
+    private int nextId = 1;
+
+    /**
+     * Salva um novo aluguel no repositório.
+     * Caso o aluguel ainda não tenha ID, ele é gerado automaticamente.
+     */
+    public void salvar(Aluguel aluguel) {
+        if (aluguel.getId() == 0) {
+            aluguel.setId(nextId++);
+        }
+        alugueis.add(aluguel);
+    }
+
+    /**
+     * Retorna uma lista com todos os aluguéis cadastrados.
+     */
+    public List<Aluguel> listarTodos() {
+        return new ArrayList<>(alugueis);
+    }
+
+    /**
+     * Busca um aluguel específico pelo seu ID.
+     * @param id Identificador único do aluguel.
+     * @return O aluguel correspondente ou null, caso não exista.
+     */
+    public Aluguel buscarPorId(int id) {
+        for (Aluguel aluguel : alugueis) {
+            if (aluguel.getId() == id) {
+                return aluguel;
+            }
+        }
+        return null;
+    }
+}
+```
+### 👥 2. `ClienteRepository`
+```java
+package repositories;
+
+import entities.Cliente;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Repositório responsável por gerenciar os clientes cadastrados.
+ * Permite salvar, listar e buscar clientes por CPF.
+ */
+public class ClienteRepository {
+
+    private List<Cliente> clientes = new ArrayList<>();
+
+    /**
+     * Adiciona um novo cliente à lista.
+     */
+    public void salvar(Cliente cliente) {
+        clientes.add(cliente);
+    }
+
+    /**
+     * Busca um cliente pelo CPF.
+     * @param cpf CPF do cliente a ser encontrado.
+     * @return Cliente correspondente ou null, caso não exista.
+     */
+    public Cliente buscarPorCpf(String cpf) {
+        for (Cliente cliente : clientes) {
+            if (cliente.getCpf().equals(cpf)) {
+                return cliente;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Retorna uma lista com todos os clientes cadastrados.
+     */
+    public List<Cliente> listarTodos() {
+        return new ArrayList<>(clientes);
+    }
+}
+
+````
+
+### 🚗 3. `VeiculoRepository`
+```java
+package repositories;
+
+import entities.Veiculo;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Repositório responsável por armazenar e gerenciar os veículos disponíveis.
+ * Contém métodos para salvar, listar e buscar veículos.
+ */
+public class VeiculoRepository {
+
+    private List<Veiculo> veiculos = new ArrayList<>();
+    private int nextId = 1;
+
+    /**
+     * Salva um novo veículo no repositório.
+     * Caso o veículo não tenha ID, um novo é atribuído automaticamente.
+     */
+    public void salvar(Veiculo veiculo) {
+        if (veiculo.getId() == 0) {
+            veiculo.setId(nextId++);
+        }
+        veiculos.add(veiculo);
+    }
+
+    /**
+     * Retorna uma lista com todos os veículos cadastrados.
+     */
+    public List<Veiculo> listarTodos() {
+        return new ArrayList<>(veiculos);
+    }
+
+    /**
+     * Retorna apenas os veículos disponíveis para aluguel.
+     */
+    public List<Veiculo> listarDisponiveis() {
+        List<Veiculo> disponiveis = new ArrayList<>();
+        for (Veiculo veiculo : veiculos) {
+            if (veiculo.isDisponivel()) {
+                disponiveis.add(veiculo);
+            }
+        }
+        return disponiveis;
+    }
+
+    /**
+     * Busca um veículo específico pelo seu ID.
+     * @param id Identificador único do veículo.
+     * @return Veículo correspondente ou null, caso não exista.
+     */
+    public Veiculo buscarPorId(int id) {
+        for (Veiculo veiculo : veiculos) {
+            if (veiculo.getId() == id) {
+                return veiculo;
+            }
+        }
+        return null;
+    }
+}
+````
